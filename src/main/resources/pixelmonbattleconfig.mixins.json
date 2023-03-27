@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "com.rdm.pixelmonbattleconfig.mixins",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+	
+	],
+	"client": [
+	
+	],
+	"refmap": "pixelmonbattleconfig.refmap.json",
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

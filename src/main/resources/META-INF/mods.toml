@@ -9,7 +9,7 @@ version="${file.jarVersion}"
 displayName="Pixelmon Battle Config" 
 #updateJSONURL=""
 #displayURL="" 
-logoFile="logo.png"
+logoFile="pbc_logo.png"
 credits="RDM Studios" 
 authors="RDM Studios" 
 description='''
@@ -66,6 +66,13 @@ Simple Pixelmon addon that adds extra config options to Pixelmon.
     mandatory=false
     versionRange="[1.16-3.1.7,)"
     ordering="NONE"
+    side="BOTH"
+
+[[dependencies.pixelmonbattleconfig]]
+    modId="datafixerslayer"
+    mandatory=false
+    versionRange="[1.0-3,]"
+    ordering="AFTER"
     side="BOTH"
 
 [[dependencies.pixelmonbattleconfig]]

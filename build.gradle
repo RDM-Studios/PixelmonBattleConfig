@@ -1,14 +1,14 @@
 buildscript {
     repositories {
         maven { url = "https://maven.minecraftforge.net/" }
-	maven { url = "https://maven.parchmentmc.org" }
-	maven { url = "https://repo.spongepowered.org/maven" }
+		maven { url = "https://maven.parchmentmc.org" }
+		maven { url = "https://repo.spongepowered.org/maven" }
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-	classpath 'org.parchmentmc:librarian:1.+'
-	classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+		classpath 'org.parchmentmc:librarian:1.+'
+		classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
@@ -35,8 +35,8 @@ minecraft {
             workingDirectory project.file('run')
 
             arg "-mixin.config=${modid}.mixins.json"
-	    property 'mixin.env.remapRefMap', 'true'
-	    property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+	   		property 'mixin.env.remapRefMap', 'true'
+	   		property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
@@ -52,8 +52,8 @@ minecraft {
             workingDirectory project.file('run')
 
             arg "-mixin.config=${modid}.mixins.json"
-	    property 'mixin.env.remapRefMap', 'true'
-	    property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+	    	property 'mixin.env.remapRefMap', 'true'
+	    	property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
@@ -69,8 +69,8 @@ minecraft {
             workingDirectory project.file('run')
 
             arg "-mixin.config=${modid}.mixins.json"
-	    property 'mixin.env.remapRefMap', 'true'
-	    property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+	    	property 'mixin.env.remapRefMap', 'true'
+	    	property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
@@ -119,6 +119,8 @@ dependencies {
 
     implementation fg.deobf("curse.maven:configured-457570:${configured_version}")
     implementation fg.deobf("curse.maven:catalogue-459701:${catalogue_version}")
+    
+    implementation fg.deobf("curse.maven:datafixerslayer-416519:${dfs_version}")
 }
 
 mixin {
