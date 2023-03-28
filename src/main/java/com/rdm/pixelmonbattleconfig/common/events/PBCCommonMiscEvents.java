@@ -106,7 +106,7 @@ public class PBCCommonMiscEvents {
 	}
 
 	public static void onBattleStart(BattleStartedEvent event) {
-		PixelmonBattleConfig.LOGGER.debug("BATTLE STARTED!");
+		// PixelmonBattleConfig.LOGGER.debug("BATTLE STARTED!");
 	}
 
 	public static void onServerTickUpdate(ServerTickEvent event) {
