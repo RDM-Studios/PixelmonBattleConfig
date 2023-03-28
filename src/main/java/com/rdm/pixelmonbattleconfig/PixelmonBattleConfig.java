@@ -6,7 +6,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.maven.artifact.versioning.ArtifactVersion;
 
+import com.pixelmonmod.pixelmon.Pixelmon;
+import com.rdm.pixelmonbattleconfig.common.events.PBCCommonMiscEvents;
 import com.rdm.pixelmonbattleconfig.common.events.PBCCommonSetupEvents;
+import com.rdm.pixelmonbattleconfig.server.events.PBCServerMiscEvents;
+import com.rdm.pixelmonbattleconfig.server.events.PBCServerSetupEvents;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -29,6 +33,7 @@ public class PixelmonBattleConfig {
     	
     	IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
     	IEventBus forgeBus = MinecraftForge.EVENT_BUS;
+    	IEventBus pixelmonBus = Pixelmon.EVENT_BUS;
 		    	
 		Optional<? extends ModContainer> opt = ModList.get().getModContainerById(MODID);
 		if (opt.isPresent()) {
@@ -40,6 +45,12 @@ public class PixelmonBattleConfig {
 		}
 				
 		modBus.addListener(PBCCommonSetupEvents::onFMLCommonSetup);
+		forgeBus.addListener(PBCServerMiscEvents::onServerTickUpdate);
+		forgeBus.addListener(PBCServerSetupEvents::onServerStartup);
+		forgeBus.addListener(PBCServerSetupEvents::onServerShutdown);
+		pixelmonBus.addListener(PBCCommonMiscEvents::onBattleStart);
+		pixelmonBus.addListener(PBCCommonMiscEvents::onTrainerBattleLoss);
+		pixelmonBus.addListener(PBCCommonMiscEvents::onWildPokemonLoss);
         
 		forgeBus.register(this);
     }

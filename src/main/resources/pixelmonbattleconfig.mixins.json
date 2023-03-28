@@ -3,10 +3,10 @@
 	"package": "com.rdm.pixelmonbattleconfig.mixins",
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [
-	
+		"ServerWorldInfoMixin"
 	],
 	"client": [
-	
+		
 	],
 	"refmap": "pixelmonbattleconfig.refmap.json",
 	"injectors": {
